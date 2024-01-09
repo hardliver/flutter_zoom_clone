@@ -38,7 +38,7 @@ class AuthMethods {
         res = true;
       }
     } on FirebaseAuthException catch (e) {
-      showSnackBar(context, e.message!);
+      if (context.mounted) showSnackBar(context, e.message!);
       res = false;
     }
     return res;
